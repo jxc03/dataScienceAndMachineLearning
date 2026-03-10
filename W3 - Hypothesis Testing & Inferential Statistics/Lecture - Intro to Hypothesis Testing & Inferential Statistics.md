@@ -76,11 +76,56 @@ Summary:
 
 ## 7. Normality testing
 The **Shapiro-Wilk test** states that:
-- H0: data are normally distributed
-- H1: data are not normally distributed
+- **H0**: data are normally distributed
+- **H1**: data are not normally distributed
 ```R
 shapiro.test(x)
 ```
+`p > 0.05 ->` no strong evidence against normality
+`p < 0.05 ->` evidence the data are not normal
+Helps decide whether a parametric test like a t-test is appropriate.
 
+## 8. Type I and Type II errors
+Type I error:<br>
+You say there is a significant effect when there really is none.<br>
+This is a **false positive**.
 
+Type II error:
+You fail to detect a real effect.<br>
+This is a **false negative**.
 
+- **Type I** = "I found something that isn’t really there"
+- **Type II** = "I missed something that really is there"
+
+## 9. Statistical power
+Power as the probability of getting a significant result when the alternative hypothesis is actually true and gives the expression:
+```R
+power = 1 - beta
+```
+Where beta is the probability of a Type II error.<br>
+
+What affects power / Power increases if: 
+- increase sample size
+- use a higher alpha
+- use a one-sided test
+
+Low power means you may miss real effects.<br>
+That is why larger samples matter so much in experiments and why the simulation practical is important.
+
+## 10. Effect size
+**Cohen’s d** and the usual interpretation:
+- small = 0.2
+- medium = 0.5
+- large = 0.8
+
+Formula:
+```R
+d = abs(mean1 - mean2) / pooled_sd
+```
+Why effect size matters:<br>
+A p-value tells you whether an effect is statistically significant.<br>
+An effect size tells you whether the effect is **small or large in practical terms**.
+
+Distinction is important:
+- a tiny effect can be significant with a huge sample
+- a meaningful effect might fail to reach significance with a very small sample
