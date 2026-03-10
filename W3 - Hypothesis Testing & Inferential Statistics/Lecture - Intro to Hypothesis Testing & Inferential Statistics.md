@@ -1,22 +1,5 @@
 # Week 3 - Hypothesis Testing and Inferential Statistics
 
-## Main ideas
-Focused on using sample data to make conclusions about populations. Key topics included standard error, confidence intervals, hypothesis testing, p-values, statistical power, effect size and outliers.
-
-## Key concepts
-- Inferential statistics help estimate population patterns from sample data.
-- Standard error shows how precise the sample mean is.
-- Confidence intervals provide a plausible range for the population mean.
-- Hypothesis testing compares a null hypothesis against an alternative hypothesis.
-- A p-value below 0.05 is usually treated as statistically significant.
-- Power is the probability of detecting a true effect.
-
-## Useful R functions
-`mean()`, `sd()`, `sqrt()`, `t.test()`, `shapiro.test()`, `scale()`, `boxplot()`, `IQR()`, `power.t.test()`
-
-## Reflection
-Seeing how larger sample sizes make estimates more stable and improve power. The simulation practical helped connect theory with repeated experiments in R.
-
 ## 1. Inferential statistics 
 **Descriptive statistics** summarise the data you have.<br>
 Examples: mean, median, standard deviation, graphs.
@@ -32,19 +15,19 @@ A formula to know:
 ```R
 SE = SD / sqrt(n)
 ```
-If sample size n gets bigger, the denominator gets bigger so the SE gets smaller.<br>
-That means the estimate becomes more stable and more reliable.<br>
+If sample size `n` gets bigger, the denominator gets bigger so the **SE gets smaller**.<br>
+That means the estimate becomes **more stable and more reliable**.<br>
 This links that larger sample sizes improve reliability.<br>
 
-SD = spread of the data<br>
-SE = precision of the mean<br>
+**SD** = spread of the data<br>
+**SE** = precision of the mean<br>
 
 ## 3. Confidence intervals
 A confidence interval example on a mean and standard error, showing how a 95% confidence interval can be built around the sample mean:
 ``` R
 95% CI = mean ± 1.96 * SE
 ```
-A 95% confidence interval gives a plausible range for the population mean.
+A **95% confidence interval** gives a plausible range for the population mean.
 
 If mean = 75 and SE = 3, then:
 ```R
@@ -57,17 +40,17 @@ The CI is:
 ```
 Therefore 95% confident that the population mean lies between 69.12 and 80.88.
 
-## 3. Hypothesis testing
+## 4. Hypothesis testing
 A standard structure:
-- H0 (null hypothesis): no difference / no effect
-- H1 (alternative hypothesis): there is a difference / effect
-- choose alpha, usually 0.05
+- **H0 (null hypothesis)**: no difference / no effect
+- **H1 (alternative hypothesis)**: there is a difference / effect
+- choose alpha, usually **0.05**
 - calculate a test statistic and p-value
-- if p < 0.05, reject H0.
+- if **p < 0.05**, reject H0
 
 An example, question: "Are dogs faster than mice?"
-- H0: dogs are not faster than mice
-- H1: dogs are faster than mice
+- **H0**: dogs are not faster than mice
+- **H1**: dogs are faster than mice
 
 Basic flow:
 1. State the hypotheses
@@ -76,5 +59,28 @@ Basic flow:
 4. Run the test
 5. Interpret the p-value
 6. Write the conclusion properly
+
+## 5. P-value
+Evidence against the null hypothesis and shows the decision rule **p < 0.05**. A t-test example where a p-value of 0.01 is considered statistically significant.<br>
+A p-value is the probability of getting results at least this extreme **if the null hypothesis were true**.
+
+## 6. Choosing the right test
+Should first check assumptions like **normality** and variance before choosing a **parametric** or **non-parametric** test.<br>
+
+Summary:
+- Compare **two means**, normal data, independent groups -> **independent t-test**
+- Compare **two means**, same people before/after -> **paired t-test**
+- Data not normal for two groups -> **Mann–Whitney U** or **Wilcoxon signed-rank**, depending on design
+- Compare **proportions / counts -> chi-square**
+- Compare **more than two means -> ANOVA**.
+
+## 7. Normality testing
+The **Shapiro-Wilk test** states that:
+- H0: data are normally distributed
+- H1: data are not normally distributed
+```R
+shapiro.test(x)
+```
+
 
 
