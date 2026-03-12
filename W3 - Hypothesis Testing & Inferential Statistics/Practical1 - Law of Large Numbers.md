@@ -20,7 +20,7 @@ for(i in 1:100){
 The output:<br>
 ![Screenshot of output](Screenshots/image1.png)
 
-## Explanation
+## Explanation of the code
 
 1. The following line code:
 ```R
@@ -65,3 +65,20 @@ sampleSDs[i] <- sd(y)
 ```
 
 Stores the mean and SD for each sample.
+
+## Plot 
+
+Notice how  the sample mean is more akin to the population mean as the sample size increases 
+
+The following code:
+```R
+plot(samplemeans)
+abline(h = 52)
+
+plot(sampleSDs)
+abline(h = 40)
+```
+
+The output:<br>
+![Screenshot of the samplemeans plot](Screenshots/image2.png)
+![Screenshot of the sampleSDS plot](Screenshots/image3.png)
