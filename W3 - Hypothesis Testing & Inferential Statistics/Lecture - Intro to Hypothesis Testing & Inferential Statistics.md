@@ -123,8 +123,8 @@ Formula:
 d = abs(mean1 - mean2) / pooled_sd
 ```
 Why effect size matters:<br>
-A p-value tells you whether an effect is statistically significant.<br>
-An effect size tells you whether the effect is **small or large in practical terms**.
+- A p-value tells you whether an effect is statistically significant.<br>
+- An effect size tells you whether the effect is **small or large in practical terms**.
 
 Distinction is important:
 - a tiny effect can be significant with a huge sample
