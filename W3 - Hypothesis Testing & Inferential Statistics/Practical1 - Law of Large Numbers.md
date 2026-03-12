@@ -17,4 +17,4 @@ for(i in 1:100){
 ```
 
 The output:
-![Screenshot of output](Screenshots/image1.pngimage1.png)
+![Screenshot of output](Screenshots/image1.png)
