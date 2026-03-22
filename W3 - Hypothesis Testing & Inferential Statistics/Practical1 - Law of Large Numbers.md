@@ -68,7 +68,7 @@ Stores the mean and SD for each sample.
 
 ## Plot 
 
-Notice how  the sample mean is more akin to the population mean as the sample size increases 
+Notice how the sample mean is more akin to the population mean as the sample size increases 
 
 The following code:
 ```R
