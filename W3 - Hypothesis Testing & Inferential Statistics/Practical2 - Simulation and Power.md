@@ -25,7 +25,7 @@ length(pvalues[pvalues < 0.05])
 ```
 
 The output:<br>
-![Screenshot of output](Screenshots/image.png)
+![Screenshot of output](Screenshots/image4.png)
 
 ## Explanation of the code
 
@@ -87,14 +87,21 @@ Runs an independent two-sample t-test on that simulated study
 pvalues[i] <- p$p.value
 ```
 
-Starts a loop to simulate 100 separate studies
+Stores the p-value from that study in the vector.
 
-5. The following line code:
+9. The following line code:
 ```R
-for(i in 1:100){
+hist(pvalues, breaks = 20)
 ```
 
-Starts a loop to simulate 100 separate studies
+Plots the distribution of p-values across the 100 studies.
+
+10. The following line code:
+```R
+length(pvalues[pvalues < 0.05])
+```
+
+Counts how many studies were statistically significant at the 0.05 level
 
 
 
